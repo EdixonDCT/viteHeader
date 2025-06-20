@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-weight: bolder;
+  font-family: 'Courier New', Courier, monospace;
 }
 body{
   background-color: #241e26;
@@ -33,13 +35,12 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   width: 250px;
   text-decoration: none;
   color: white;
   text-transform: uppercase;
   font-size: 30px;
-  font-weight: bolder;
-  font-family: 'Courier New', Courier, monospace;
   border-left: 2px solid #241e26;
   border-right  : 2px solid #241e26;
   transition: 0.3s;
@@ -49,4 +50,69 @@ body{
   border: 2px solid #241e26;
   background-color: cyan;
   color: #44374a;
+}
+main{
+  margin: 10px;
+  color: white;
+  font-size:larger;
+  font-weight: bolder;
+}
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #44374a;
+  font-size: larger;
+}
+th, td {
+  border: 5px solid #241e26;
+  padding: 10px;
+  text-align: center;
+}
+th {
+  background-color: white;
+  color: #241e26;
+}
+.boton{
+  width: 100px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 3px solid black;
+  transition: 0.3s;
+}
+.containerNuevo{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.editar{
+  background-color: #90ff17;
+}
+.eliminar{
+  background-color: #f2445e;
+}
+.nuevo{
+  background-color: cyan;
+  width: 30%;
+}
+.editar:hover{
+  background-color: #241e26;
+  border: 3px solid #90ff17;
+  color: #90ff17;
+}
+.eliminar:hover{
+  background-color: #241e26;
+  border: 3px solid #f2445e;
+  color: #f2445e;
+}
+.nuevo:hover{
+  background-color: #44374a;
+  width: 30%;
+  border: 3px solid cyan;
+  color: cyan;
 }
