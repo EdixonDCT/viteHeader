@@ -1,16 +1,27 @@
 import { CategoryController } from "./views/categories/categoryController";
 import { ProductController } from "./views/products/productsController";
-
+import { NewCategoryController } from "./views/newCategory/NewCategoryController";
 const main = document.querySelector("main");
 
 const cargarVistas = async (hash) => {
-  console.log(`Hash #1:${hash}`);
   if (!hash) {
     main.textContent = "Error 404: NO LOADED PAGE...";
     return;
   }
   let palabra = hash.slice(1);
-  console.log(`Hash #2:${hash}`);
+  let validar = 0;
+  for (let cont = 0; cont < Vistas.length; cont++)
+  {
+    if (palabra == Vistas[cont].nombre)
+    {
+      validar++;
+    }
+  }
+  if (validar == 0)
+  {
+    main.textContent = "Error 404: NO LOADED PAGE...";
+    return;
+  }
   // url = `src/views/${palabra}/index.html`;
   // const valor = await fetch(url);
   // const body = await valor.text();
@@ -25,7 +36,6 @@ const cargarVistas = async (hash) => {
       Vistas[cont].controlador(main);
     }
   }
-  console.log(`Hash #3:${hash}`);
 };
 
 addEventListener("DOMContentLoaded", (e) => {
@@ -44,11 +54,16 @@ const Vistas = [
   {
     nombre: "categories",
     ubicacion: "src/views/categories/index.html",
-    controlador: CategoryController,
+    controlador: CategoryController
   },
   {
     nombre: "products",
     ubicacion: "src/views/products/index.html",
-    controlador: ProductController,
+    controlador: ProductController
   },
+  {
+    nombre: "newCategory",
+    ubicacion: "src/views/newCategory/index.html",
+    controlador: NewCategoryController
+  }
 ];
